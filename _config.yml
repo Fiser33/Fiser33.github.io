@@ -10,7 +10,7 @@ search: true
 atom_feed:
   hide: true
 paginate: 5
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 author:
   name: Jakub Fišer
