@@ -1,0 +1,63 @@
+# Site settings
+title: Fiser33
+description: >-
+  I am iOS developer; focusing on SwiftUI; experienced with UIKit, Objective-C, 
+  Ruby and a lot other
+repository: Fiser33/Fiser33.github.io
+locale: en
+masthead_title: Home
+search: true
+atom_feed:
+  hide: true
+paginate: 5
+theme: minimal-mistakes-jekyll
+
+author:
+  name: Jakub Fišer
+  avatar: /assets/images/profile.jpeg
+  bio: I am iOS developer; focusing on SwiftUI; experienced with UIKit, Objective-C, Ruby and a lot other
+  location: Czech Republic
+  links:
+    - label: Twitter
+      icon: fab fa-fw fa-twitter
+      url: https://twitter.com/Fiser333
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/Fiser33
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      show_date: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jekyll-rushed-analytics
+
+whitelist:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-include-cache
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+jekyll-rushed-analytics:
+  GoogleAnalytics4:  # Google Analytics 4
+    measurement_id: G-Q15F4YVYZF
