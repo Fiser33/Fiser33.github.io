@@ -267,4 +267,4 @@ Another solution is to provide custom implementation of protocol method. Even th
 
 Both options can be viable to use, the only key aspect always is what fits best for you and your project.
 
-All code is available in the [repository](https://github.com/Fiser33/Fiser33.github.io/examples/swift/codable_enum).
+All code is available in the [repository](https://github.com/Fiser33/Fiser33.github.io/tree/main/examples/swift/codable_enum).
