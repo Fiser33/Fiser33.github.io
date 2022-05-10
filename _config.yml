@@ -42,7 +42,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-include-cache
-  - jekyll-rushed-analytics
 
 whitelist:
   - jekyll-feed
@@ -58,6 +57,8 @@ exclude:
   - Gemfile.lock
   - vendor
 
-jekyll-rushed-analytics:
-  GoogleAnalytics4:  # Google Analytics 4
+analytics:
+  provider: google-gtag
+  google:
     measurement_id: G-Q15F4YVYZF
+    anonymize_ip: false
