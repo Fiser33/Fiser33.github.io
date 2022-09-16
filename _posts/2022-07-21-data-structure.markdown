@@ -209,4 +209,4 @@ We tried several basic data structures available in swift to implement relativel
 
 Even though some of the demonstrated solutions come with few issues, every one of them can do the job. In the end, there is no single solution that you should use every single time. It's up to a developer to know the language possibilities and to select one that fits best for the specific need.
 
-All code is available in the [repository](https://github.com/Fiser33/Fiser33.github.io/tree/main/examples/swift/). Note that you need to comment out other marked cases for the file to be compiled with no error.
+All code is available in the [repository](https://github.com/Fiser33/Fiser33.github.io/tree/main/examples/swift/data_structure). Note that you need to comment out other marked cases for the file to be compiled with no error.

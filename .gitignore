@@ -13,4 +13,7 @@ _site/
 
 # Folders
 vendor/
+
+# Xcode
 xcuserdata/
+*.xctimeline
