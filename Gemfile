@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
-gem "webrick"
+gem "github-pages", '> 0', group: :jekyll_plugins
+gem "webrick", '> 0'
 
 group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-include-cache"
-  gem "jekyll-seo-tag"
+  gem "jekyll-feed", '> 0'
+  gem "jekyll-include-cache", '> 0'
+  gem "jekyll-seo-tag", '> 0'
 end
