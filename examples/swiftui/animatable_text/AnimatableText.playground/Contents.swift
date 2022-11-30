@@ -21,16 +21,6 @@ struct ContentView: View {
     }
 }
 
-extension Int: VectorArithmetic {
-    public mutating func scale(by rhs: Double) {
-        self = Int(round(Double(self) * rhs))
-    }
-
-    public var magnitudeSquared: Double {
-        Double(self).magnitudeSquared
-    }
-}
-
 struct NumberText: View, Animatable {
     var value: Int
 
@@ -64,41 +54,11 @@ struct FormattedNumberText: View, Animatable {
         get { Double(value) }
         set { value = Int(newValue) }
     }
-//    var animatableData: Double {
-//        get { round(value.doubleValue) }
-//        set { value = NSNumber(floatLiteral: round(newValue)) }
-//    }
 
     var body: some View {
         Text(formatter.string(from: NSNumber(integerLiteral: value)) ?? "")
     }
 }
-
-//struct FormattedNumberText: View, Animatable {
-//    var value: Int
-//    let formatter: NumberFormatter
-//
-//    static var defaultFormatter = NumberFormatter(locale: .current, numberStyle: .decimal)
-//
-//    init(value: Int, formatter: NumberFormatter = Self.defaultFormatter) {
-//        self.value = value
-//        self.formatter = formatter
-//    }
-//
-//    init(value: Int, locale: Locale, style: NumberFormatter.Style = Self.defaultFormatter.numberStyle) {
-//        self.value = value
-//        self.formatter = NumberFormatter(locale: locale, numberStyle: style)
-//    }
-//
-//    var animatableData: Int {
-//        get { value }
-//        set { value = newValue }
-//    }
-//
-//    var body: some View {
-//        Text(NSNumber(integerLiteral: value), formatter: formatter)
-//    }
-//}
 
 extension NumberFormatter {
     convenience init(locale: Locale) {
