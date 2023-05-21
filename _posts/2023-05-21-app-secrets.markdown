@@ -213,13 +213,8 @@ Cons:
 - Extra effort on new project members onboarding
 
 # Final overview
-| Option | Omitted from git | Hard to read from IPA | value per Configuration | Easy to setup |
-| --- | :---: | :---: | :---: | :---: |
-| Source code | 🔴 | 🔴 | 🟠 | 🟢 |
-| Info.plist | 🔴 | 🔴 | 🔴 | 🟢 |
-| Build Settings | 🔴 | 🔴 | 🟢 | 🟢 |
-| xcconfig | 🟢 | 🔴 | 🟢 | 🟠 |
-| Third party (Arkana) | 🟢 | 🟢 | 🟢 | 🟠 |
+![Final overview](/assets/images/app_secrets_final_overview.png)
+*Final overview of all the listed options*
 
 # Summary
 You have seen several options on how to store application secrets. For each, some advantages and disadvantages were provided or demonstrated on the real demo project. This should help you to better understand your options when it comes to securing application secrets.
