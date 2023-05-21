@@ -65,7 +65,7 @@ Now let's prepare the certificate for import to Match. Regardless if you already
 If you don't have any certificate created yet (or want to create new one anyway), you can generate new one using Fastlane tool like this:
 
 ```bash
-bundle exec fastlane cert -u "<YOUR_APPLE_ID"
+bundle exec fastlane cert -u "<YOUR_APPLE_ID>"
 ```
 
 This generates distribution certificate by default, you can change that by adding `--development` option. If you already have a certificate but you want to generate new one (for example if the existing one is about to expire soon), you can use `--force` option.

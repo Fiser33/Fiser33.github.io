@@ -1,0 +1,6 @@
+import_name: 'ArkanaKeys'
+namespace: 'Keys'
+result_path: 'ArkanaSecrets'
+package_manager: spm
+global_secrets:
+  - ApiKey
