@@ -4,18 +4,20 @@ categories: Swift
 ---
 
 # Intro
-On the latest Worldwide Developer Conference (WWDC 2023), Apple has introduced a new way on how to extend your source code using **Swift Macro**. It acts like a custom plugin to the Swift compiler that allows you to introduce additional checks or code generation. Code modification and deletion is not allowed. Nevertheless it will be a useful way to reduce repetitive tasks or easily solve tasks that were hard or impossible to achieve previously.
+On the latest Worldwide Developer Conference (_WWDC 2023_), Apple has introduced a new way on how to extend your source code using **Swift Macro**. It acts like a custom plugin to the Swift compiler that allows you to introduce additional checks or code generation. Code modification and deletion is not allowed. Nevertheless it will be a useful way to reduce repetitive tasks or easily solve tasks that were hard or impossible to achieve previously.
 
 Here I would like to provide my personal impressions from my recent first Swift Macro experience. So brave yourself for plenty of subjective opinions.
 
 # Issues
 The main limitation will be requirement of Xcode 15 version so make sure it already runs on your CI/CD machine. Other than that Macro will work on projects targeting most of older OS versions too, the minimum supported versions come from the dependency on `SwiftSyntaxMacros` package, see [Package.swift](https://github.com/apple/swift-syntax/blob/main/Package.swift) definition.
 
-Since Swift Macro is relatively new to the Apple development, you can’t be surprised when there are some limitations or issues. One of the most noticeable issues is the build compilation time significant increase. I won’t get into much details as there is entire [forum thread](https://forums.swift.org/t/macro-adoption-concerns-around-swiftsyntax/66588) on this that will for sure bring more clarity. And from my experience, Apple sillicon does not resolve the issue as you might expect. While increased build time may not be a blocker, it is something to keep in mind because every minute counts today, especially if it costs you money!
+Since Swift Macro is relatively new to the Apple development, you can’t be surprised when there are some limitations or issues. One of the most noticeable issues is the build compilation time significant increase. I won’t get into much details as there is entire [forum thread](https://forums.swift.org/t/macro-adoption-concerns-around-swiftsyntax/66588) on this that will for sure bring more clarity. And from my experience, Apple sillicon does not resolve the issue as you might expect. While increased build time may not be a blocker, it is something to keep in mind because every minute counts today, especially if it costs you money! It can also negatively impact development time if you do frequent changes to the Macro package definition and perform clean build repeatedly.
 
 Another issue I have encountered was that Xcode build froze to me from time to time. Unfortunately I did not find exact cause to this to know if the issue may still be present in these days. It was most probably a mistake on my end, however it would be nice to have at least some error message, right?
 
-There’s also an inconvenient limitation that it’s not possible to debug using breakpoints in Xcode during the development. The only way seems to be using unit tests. So you will either have to go with Test Driven Development approach or your only other option probably are diagnostic logs which may not be as ideal and definitely more time consuming.
+There’s also an inconvenient limitation that debugging with breakpoints is not possible using **Run** action as we all are used to. The only way seems to be using unit tests. So you will either have to go with Test Driven Development approach or your only other option probably are diagnostic logs which may not be as ideal and definitely more time consuming.
+
+As you will find out, there are two targets required for your macro - one for the declaration and the other one for the actual implementation. You will get these for free upon new macro package creation. However, things in Swift Package Manager can get complicated when you want to share some codebase across multiple targets. This probably does not directly relates to Swift Macro as is but you should have good knowledge of SPM manifest file because Xcode warnings will not help you much on errors (most of the time I was facing some linking errors).
 
 # Resources
 The one thing that surprised me though was the documentation. It’s not that there is too few of it. On contrary you’ll find plenty of articles, manuals and even examples out there. It’s just that the existing documentation is not as detailed as one would need or expect.
@@ -36,6 +38,6 @@ And there are many more publicly available Swift Macro implementations that migh
 In my case I was trying to implement a custom annotation on Combine Subject property that would automatically add more code in order to implement "lazy load" mechanism with option to handle retries and propagate potential errors to the consumer side.
 
 # Summary
-Just to remind you, all the above are only my personal impressions after the recent first take on custom Swift Macro implementation. As the feature is still relatively new, we may see many improvements or changes over the next few versions.
+Just to remind you, all the above are only my personal impressions after the recent first take on custom Swift Macro implementation. As I have mentioned several issues or limitations, there are also plenty of benefits. We already have two macros implemented in my current project and they do work as expected.
 
-As I have mentioned several issues or limitations, there are also plenty of benefits. So please don’t take it like you should not use Swift Macro at all for now. You should evaluate all the benefits and risks specifically for your project as with any new feature or technology.
+Keep in mind that the feature is still relatively new so we may see many improvements or changes over the next few versions. Any issue or information mentioned here may not apply for your project and you should evaluate all the benefits and risks specifically for your needs as with any new feature or technology.
