@@ -3,7 +3,6 @@ title: "Application secrets"
 categories: Technical
 ---
 
-# Intro
 As developers, our responsibility is not only to create an appealing user interface and communicate with a server. We are also responsible for setting up an automation or making the application accessible. And last but not least, we must make sure that the application is secured. Not only to protect user data but also to protect application resources.
 
 A key aspect to that are application secrets. I would like to focus on two security risks - storing secrets in git repository and having them easily extractable from the application IPA file. 
