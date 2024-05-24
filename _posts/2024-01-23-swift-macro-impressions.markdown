@@ -3,7 +3,6 @@ title: "Swift Macro impression"
 categories: Swift
 ---
 
-# Intro
 On the latest Worldwide Developer Conference (_WWDC 2023_), Apple has introduced a new way on how to extend your source code using **Swift Macro**. It acts like a custom plugin to the Swift compiler that allows you to introduce additional checks or code generation. Code modification and deletion is not allowed. Nevertheless it will be a useful way to reduce repetitive tasks or easily solve tasks that were hard or impossible to achieve previously.
 
 Here I would like to provide my personal impressions from my recent first Swift Macro experience. So brave yourself for plenty of subjective opinions.
